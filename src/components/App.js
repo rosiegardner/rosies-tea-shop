@@ -1,16 +1,14 @@
 import React from 'react';
 import Header from './Hearder';
+import TeaList from './TeaList';
 
 function App(){
-  const tea = 'Rose hip & lavender'
   return (
     <React.Fragment>
       <Header />
-      <h1>Rosies Tea Shop</h1>
-      <h4>{tea}</h4>
-      <hr />
+      <TeaList />
     </React.Fragment>
-  )
+  );
 }
 
 export default App;
