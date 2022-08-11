@@ -19,31 +19,44 @@ function NewTeaForm(props){
 
   return (
     <React.Fragment>
-      <form onSubmit={handleNewTeaFormSubmission}>
-        <input
-          type='text'
-          name='name'
-          placeholder='Tea Name' />
-        <input 
-          type='text'
-          name='blend'
-          placeholder='Type of Tea'/>
-        <input
-          type='text'
-          name='origin'
-          placeholder='Origin of Tea' />
-        <input  
-          type='number'
-          name='price per oz'
-          placeholder='Price per ounce' />
-        <input 
-          type='number'
-          name='ounces per crate'
-          placeholder='Ounces per crate'/>  
-        <input  
-          type='number'
-          name='stock quantity'
-          placeholder='Enter number of crates' />
+        <form onSubmit={handleNewTeaFormSubmission}>
+        <ul>
+          <li>
+            <input
+              type='text'
+              name='name'
+              placeholder='Tea Name' /></li>
+          <br></br>
+          <li>
+            <input 
+              type='text'
+              name='blend'
+              placeholder='Type of Tea'/></li>
+          <br></br>
+          <li>
+            <input
+              type='text'
+              name='origin'
+              placeholder='Origin of Tea' /></li>
+          <br></br>
+          <li>
+            <p><input  
+              type='number'
+              name='price per oz'
+              placeholder='$Dollar Amount - Price per ounce' /><small>.00</small></p></li>
+          <br></br>
+          <li>
+            <p><input 
+              type='number'
+              name='ounces per crate'
+              placeholder='Ounces per crate' /><small>.oz</small></p></li>
+          <br></br>
+          <li>
+            <input  
+              type='number'
+              name='stock quantity'
+              placeholder='Enter number of crates' /></li>
+        </ul>
         <button type='submit'>Add Tea to Stock</button>  
       </form>
     </React.Fragment>
