@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Tea(){
-  const tea = 'Rose hip & lavender'
+function Tea(props){
   return (
     <React.Fragment>
-      <h1>Rosies Tea Shop</h1>
-      <h4>{tea}</h4>
+      <h3>{props.name} - ${props.price}</h3>
+      <p><em>{props.blend} - {props.origin}</em></p>
     </React.Fragment>
   );
 }
