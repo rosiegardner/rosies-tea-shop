@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import ReusableForm from './ReusableForm';
 
 function NewTeaForm(props){
 
@@ -19,46 +20,9 @@ function NewTeaForm(props){
 
   return (
     <React.Fragment>
-        <form onSubmit={handleNewTeaFormSubmission}>
-        <ul>
-          <li>
-            <input
-              type='text'
-              name='name'
-              placeholder='Tea Name' /></li>
-          <br></br>
-          <li>
-            <input 
-              type='text'
-              name='blend'
-              placeholder='Type of Tea'/></li>
-          <br></br>
-          <li>
-            <input
-              type='text'
-              name='origin'
-              placeholder='Origin of Tea' /></li>
-          <br></br>
-          <li>
-            <p><input  
-              type='number'
-              name='price per oz'
-              placeholder='$Dollar Amount - Price per ounce' /><small>.00</small></p></li>
-          <br></br>
-          <li>
-            <p><input 
-              type='number'
-              name='ounces per crate'
-              placeholder='Ounces per crate' /><small>.oz</small></p></li>
-          <br></br>
-          <li>
-            <input  
-              type='number'
-              name='stock quantity'
-              placeholder='Enter number of crates' /></li>
-        </ul>
-        <button type='submit'>Add Tea to Stock</button>  
-      </form>
+      <ReusableForm
+      formSubmissionHandler={handleNewTeaFormSubmission}
+      buttonText="Add to Stock" />
     </React.Fragment>
   );
 }
