@@ -9,18 +9,28 @@ class TeaControl extends React.Component {
     this.state = {
       formVisibleOnPage: false
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage}));
   }
 
   render() {
     let currentlyVisibleState = null;
+    let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewTeaForm />
+      currentlyVisibleState = <NewTeaForm />;
+      buttonText = "Return to Tea List";
     } else {
-      currentlyVisibleState = <TeaList />
+      currentlyVisibleState = <TeaList />;
+      buttonText = "View Tea"
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
