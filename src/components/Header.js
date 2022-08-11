@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header(){
   return (
-    <h1>Tea</h1>
+    <h1>Rosies Tea House</h1>
   );
 }
 
