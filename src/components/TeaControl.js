@@ -7,25 +7,39 @@ class TeaControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      mainTeaList: []
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = () => {
     this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage}));
+      formVisibleOnPage: !prevState.formVisibleOnPage
+    }));
+  }
+
+  handleAddingNewTeaToList = (newTea) => {
+    const newMainTeaList = this.state.mainTeaList
+      .concat(newTea);
+    this.setState({
+      mainTeaList: newMainTeaList, 
+      formVisibleOnPage: false 
+    });
   }
 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewTeaForm />;
-      buttonText = "Return to Tea List";
+      currentlyVisibleState = 
+        <NewTeaForm 
+          onNewTeaCreation={this.handleAddingNewTeaToList} />;
+          buttonText = "Return to Tea List";
     } else {
-      currentlyVisibleState = <TeaList />;
-      buttonText = "View Tea"
+      currentlyVisibleState = 
+      <TeaList 
+      teaList={this.state.mainTeaList} />;
+      buttonText = "View Tea";
     }
     return (
       <React.Fragment>
