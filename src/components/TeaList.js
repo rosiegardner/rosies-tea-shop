@@ -8,7 +8,7 @@ function TeaList(props){
       <hr />
       {props.teaList.map((tea, index) => 
         <Tea 
-          names={tea.names}
+          name={tea.name}
           origin={tea.origin}
           price={tea.price}
           blend={tea.blend}
