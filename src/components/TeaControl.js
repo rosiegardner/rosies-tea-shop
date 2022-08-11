@@ -15,9 +15,16 @@ class TeaControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedTea != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedTea: null
+      });
+    } else {
+       this.setState(prevState => ({
+          formVisibleOnPage: !prevState.formVisibleOnPage,
+       }));
+    }
   }
 
   handleAddingNewTeaToList = (newTea) => {
@@ -31,10 +38,19 @@ class TeaControl extends React.Component {
 
   handleChangingSelectedTea = (id) => {
     const selectedTea = this.state.mainTeaList
-      .filter(tea => tea.id === id) [0];
+      .filter(tea => tea.id === id)[0];
     this.setState({ 
         selectedTea: selectedTea
       });
+  }
+
+  handleDeletingTea = (id) => {
+    const newMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id !== id);
+    this.setState({
+      mainTeaList: newMainTeaList,
+      selectedTea: null
+    });
   }
 
   render() {
@@ -43,7 +59,8 @@ class TeaControl extends React.Component {
     if (this.state.selectedTea != null) {
       currentlyVisibleState =
         <TeaDetail
-          tea={this.state.selectedTea} />;
+          tea={this.state.selectedTea}
+          onClickingDelete = {this.handleDeletingTea} />;
           buttonText = "Return to Tea List";
     }
     else if (this.state.formVisibleOnPage) {
