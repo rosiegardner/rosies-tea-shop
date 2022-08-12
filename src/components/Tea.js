@@ -7,9 +7,9 @@ function Tea(props){
       <div onClick = {() => props.whenTeaClicked(props.id)}>
         <h3>{props.name} - ${props.price}.00</h3>
         <h4>Type:{props.blend}</h4>
-        <h4>Origin:{props.origin}</h4>
+        {/* <h4>Origin:{props.origin}</h4>
         <p>Item Availabilty: {props.quantity}</p>
-        <p>Crates in Stock: {props.crate}</p>
+        <p>Crates in Stock: {props.crate}</p> */}
         <hr />
       </div>
     </React.Fragment>

@@ -10,10 +10,10 @@ function EditTeaForm (props) {
     props.onEditTea({
       name: event.target.name.value,
       origin: event.target.origin.value,
-      price: event.target.price.value,
+      price: parseInt(event.target.price.value),
       blend: event.target.blend.value,
-      quantity: event.target.quantity.value,
-      crate: event.target.crate.value,
+      quantity: parseInt(130),
+      crate: parseInt(1),
       id: tea.id
     });
   }

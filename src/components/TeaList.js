@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 function TeaList(props){
   return (
     <React.Fragment>
-      <hr />
-      {props.teaList.map((tea) => (
+      <hr/>
+      {props.teaList.map((tea) => 
         <Tea 
           whenTeaClicked={props.onTeaSelection}
           name={tea.name}
@@ -17,7 +17,7 @@ function TeaList(props){
           crate={tea.crate}
           id={tea.id}
           key={tea.id} />
-        ))}
+        )}
     </React.Fragment>
   );
 }

@@ -31,7 +31,7 @@ class TeaControl extends React.Component {
   }
 
   handleEditClick = () => {
-    this.setState({editing: true});
+    this.setState({ editing: true });
   }
 
   handleAddingNewTeaToList = (newTea) => {
@@ -74,33 +74,33 @@ class TeaControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    
+
     if (this.state.editing) {
       currentlyVisibleState = 
         <EditTeaForm 
-          tea = {this.state.selectedTea} 
-          onEditTicket = {this.handleEditingTeaList} />;
-          buttonText = "Return to Tea List";
+          tea={this.state.selectedTea} 
+          onEditTicket={this.handleEditingTeaList} />
+          buttonText="Return to Tea List";
     }
     else if (this.state.selectedTea != null) {
-      currentlyVisibleState =
+      currentlyVisibleState = 
         <TeaDetail
           tea={this.state.selectedTea}
-          onClickingDelete = {this.handleDeletingTea} 
-          onClickingEdit = {this.handleEditClick} />;
-          buttonText = "Return to Tea List";
+          onClickingDelete={this.handleDeletingTea} 
+          onClickingEdit={this.handleEditClick} />
+          buttonText="Return to Tea List";
     }
     else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
         <NewTeaForm 
           onNewTeaCreation={this.handleAddingNewTeaToList} />;
-          buttonText = "Return to Tea List";
+          buttonText="Return to Tea List";
     } else {
       currentlyVisibleState = 
       <TeaList 
       teaList={this.state.mainTeaList} 
       onTeaSelection={this.handleChangingSelectedTea} />;
-      buttonText = "Add Tea";
+      buttonText="Add Tea";
     }
     return (
       <React.Fragment>

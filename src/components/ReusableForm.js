@@ -24,24 +24,24 @@ function ReusableForm(props) {
           <br></br>
           <br></br>     
         <input  
-          type='number'
+          type='text'
           name='price per oz'
-          placeholder='$Dollar Amount - Price per ounce' /><small>.00</small>
+          placeholder='$Dollar Amount - Price per ounce' />
           <br></br> 
           <br></br>   
         <input 
-          type='number'
+          type='text'
           name='ounces per crate'
-          placeholder='Ounces per crate' /><small>.oz</small>
+          placeholder='Ounces per crate' />
           <br></br>
           <br></br>
         <input  
-          type='number'
+          type='text'
           name='stock quantity'
           placeholder='Enter number of crates' />
           <br></br>
           <br></br>
-        <button type='submit'>{props.buttonText}</button>  
+        <button type="submit">{props.buttonText}</button>  
       </form>
     </React.Fragment>
   );
