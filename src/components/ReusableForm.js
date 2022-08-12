@@ -4,44 +4,43 @@ import PropTypes from 'prop-types';
 function ReusableForm(props) {
   return (
     <React.Fragment>
-      <form onSubmit={FormSubmissionHandler}>
-        <ul>
-          <li>
-            <input
-              type='text'
-              name='name'
-              placeholder='Tea Name' /></li>
+      <form onSubmit={props.formSubmissionHandler}>
+        <input
+          type='text'
+          name='name'
+          placeholder='Tea Name' />
           <br></br>
-          <li>
-            <input 
-              type='text'
-              name='blend'
-              placeholder='Type of Tea'/></li>
           <br></br>
-          <li>
-            <input
-              type='text'
-              name='origin'
-              placeholder='Origin of Tea' /></li>
+        <input 
+          type='text'
+          name='blend'
+          placeholder='Type of Tea'/>
+          <br></br>  
+          <br></br>     
+        <input
+          type='text'
+          name='origin'
+          placeholder='Origin of Tea' />
           <br></br>
-          <li>
-            <p><input  
-              type='number'
-              name='price per oz'
-              placeholder='$Dollar Amount - Price per ounce' /><small>.00</small></p></li>
+          <br></br>     
+        <input  
+          type='number'
+          name='price per oz'
+          placeholder='$Dollar Amount - Price per ounce' /><small>.00</small>
+          <br></br> 
+          <br></br>   
+        <input 
+          type='number'
+          name='ounces per crate'
+          placeholder='Ounces per crate' /><small>.oz</small>
           <br></br>
-          <li>
-            <p><input 
-              type='number'
-              name='ounces per crate'
-              placeholder='Ounces per crate' /><small>.oz</small></p></li>
           <br></br>
-          <li>
-            <input  
-              type='number'
-              name='stock quantity'
-              placeholder='Enter number of crates' /></li>
-        </ul>
+        <input  
+          type='number'
+          name='stock quantity'
+          placeholder='Enter number of crates' />
+          <br></br>
+          <br></br>
         <button type='submit'>{props.buttonText}</button>  
       </form>
     </React.Fragment>
