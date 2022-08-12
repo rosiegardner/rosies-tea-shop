@@ -20,7 +20,8 @@ class TeaControl extends React.Component {
     if (this.state.selectedTea != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedTea: null
+        selectedTea: null,
+        editing: false
       });
     } else {
        this.setState(prevState => ({
