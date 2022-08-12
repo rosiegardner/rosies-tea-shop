@@ -31,7 +31,6 @@ class TeaControl extends React.Component {
   }
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
 
@@ -75,6 +74,7 @@ class TeaControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
+    
     if (this.state.editing) {
       currentlyVisibleState = 
         <EditTeaForm 

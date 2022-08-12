@@ -6,9 +6,9 @@ function TeaList(props){
   return (
     <React.Fragment>
       <hr />
-      {props.teaList.map((tea) => 
+      {props.teaList.map((tea) => (
         <Tea 
-          whenTeaClicked = {props.onTeaSelection}
+          whenTeaClicked={props.onTeaSelection}
           name={tea.name}
           origin={tea.origin}
           price={tea.price}
@@ -17,7 +17,7 @@ function TeaList(props){
           crate={tea.crate}
           id={tea.id}
           key={tea.id} />
-        )}
+        ))}
     </React.Fragment>
   );
 }
