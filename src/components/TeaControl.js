@@ -35,12 +35,12 @@ class TeaControl extends React.Component {
   }
 
   handleAddingNewTeaToList = (newTea) => {
-    const newMainTeaList = this.state.mainTeaList
-      .concat(newTea);
+    const newMainTeaList = this.state.mainTeaList.concat(newTea);
     this.setState({
-      mainTeaList: newMainTeaList, 
-      formVisibleOnPage: false 
+      mainTealist: newMainTeaList,
+      formVisibleOnPage: false
     });
+    console.log(newTea);
   }
 
   handleChangingSelectedTea = (id) => {
@@ -79,7 +79,7 @@ class TeaControl extends React.Component {
       currentlyVisibleState = 
         <EditTeaForm 
           tea={this.state.selectedTea} 
-          onEditTicket={this.handleEditingTeaList} />
+          onEditTea={this.handleEditingTeaInList} />
           buttonText="Return to Tea List";
     }
     else if (this.state.selectedTea != null) {

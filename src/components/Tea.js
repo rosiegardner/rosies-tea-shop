@@ -6,7 +6,7 @@ function Tea(props){
     <React.Fragment>
       <div onClick = {() => props.whenTeaClicked(props.id)}>
         <h3>{props.name} - ${props.price}.00</h3>
-        <h4>Type:{props.blend}</h4>
+        <p>Type: {props.blend}</p>
         {/* <h4>Origin:{props.origin}</h4>
         <p>Item Availabilty: {props.quantity}</p>
         <p>Crates in Stock: {props.crate}</p> */}
@@ -21,8 +21,8 @@ Tea.propTypes = {
   origin: PropTypes.string.isRequired,
   blend: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
-  crate: PropTypes.number.isRequired,
+  // quantity: PropTypes.number.isRequired,
+  // crate: PropTypes.number.isRequired,
   id: PropTypes.string,
   whenTeaClicked: PropTypes.func
 };

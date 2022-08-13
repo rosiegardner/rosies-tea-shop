@@ -6,11 +6,11 @@ function TeaDetail(props){
   return (
     <React.Fragment>
       <h1>Tea Information</h1>
-      <h3>{tea.name} - ${tea.price}.00 per .oz</h3>
+      <h3>{tea.name} - ${tea.price} per .oz</h3>
       <p><b>Type:</b> <em>{tea.blend}</em></p>
       <p><b>Origin:</b> <em>{tea.origin}</em></p>
-      <h4>{tea.quantity} available</h4>
-      <h4>{tea.crate} crates in stock</h4>
+      <p>{tea.quantity} available</p>
+      <p>{tea.crate} crates in stock</p>
       <button onClick= { props.onClickingEdit }>Update Item</button>
       <button onClick={() => onClickingDelete(tea.id) }>Delete Item</button>
       <hr />
