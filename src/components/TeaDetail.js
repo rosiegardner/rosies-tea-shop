@@ -11,7 +11,7 @@ function TeaDetail(props){
       <p><b>Origin:</b> <em>{tea.origin}</em></p>
       <p>{tea.quantity} available</p>
       <p>{tea.crate} crates in stock</p>
-      <button onClick= { props.onClickingEdit }>Update Item</button>
+      <button onClick={ props.onClickingEdit }>Update Item</button>
       <button onClick={() => onClickingDelete(tea.id) }>Delete Item</button>
       <hr />
     </React.Fragment>

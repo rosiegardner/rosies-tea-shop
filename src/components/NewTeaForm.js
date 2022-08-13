@@ -10,11 +10,11 @@ function NewTeaForm(props){
     props.onNewTeaCreation({
       name: event.target.name.value,
       origin: event.target.origin.value,
-      price: parseInt(event.target.price.value), // different value
+      price: parseInt(event.target.price.value), 
       blend: event.target.blend.value,
-      quantity: parseInt(130), //convert arugment to a string, parse string -
-      crate: parseInt(1), // return integer,
-      id: v4(),
+      quantity: parseInt(130), 
+      crate: parseInt(1), 
+      id: v4()
     });
   }
 
