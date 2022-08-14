@@ -27,8 +27,7 @@
 
 ### Known Bugs
 
-* Items will not render to page
-* Incomplete Project
+* NO KNOWN BUGS
 
 ### Contact
 
