@@ -10,7 +10,7 @@ class TeaControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainTeaList: [{name: 'Lipton', origin: 'Tea', price: 1, blend: 'Iced'}],
+      mainTeaList: [],
       selectedTea: null,
       editing: false
     };
@@ -73,6 +73,20 @@ class TeaControl extends React.Component {
     });
   }
 
+  handleBuyingTea = (id) => {
+    const buyTea = this.state.mainTeaList.filter(tea => tea.id === id)[0];
+    if (buyTea.quantity > 0) {
+      buyTea.quantity -= 1
+    }
+    const editedMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id !== this.state.selectedTea.id)
+      .concat(buyTea);
+    this.setState({
+      mainTeaList: editedMainTeaList,
+      selectedTea: null
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -89,7 +103,8 @@ class TeaControl extends React.Component {
         <TeaDetail
           tea={this.state.selectedTea}
           onClickingDelete={this.handleDeletingTea} 
-          onClickingEdit={this.handleEditClick} />
+          onClickingEdit={this.handleEditClick}
+          onClickingBuy={this.handleBuyingTea} />
           buttonText="Return to Tea List";
     }
     else if (this.state.formVisibleOnPage) {
