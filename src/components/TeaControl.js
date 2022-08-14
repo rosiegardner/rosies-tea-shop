@@ -10,7 +10,7 @@ class TeaControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainTeaList: [],
+      mainTeaList: [{name: 'Lipton', origin: 'Tea', price: 1, blend: 'Iced'}],
       selectedTea: null,
       editing: false
     };
@@ -37,10 +37,12 @@ class TeaControl extends React.Component {
   handleAddingNewTeaToList = (newTea) => {
     const newMainTeaList = this.state.mainTeaList.concat(newTea);
     this.setState({
-      mainTealist: newMainTeaList,
+      mainTeaList: newMainTeaList,
       formVisibleOnPage: false
     });
     console.log(newTea);
+    console.log(this.state.mainTeaList);
+    console.log(newMainTeaList);
   }
 
   handleChangingSelectedTea = (id) => {
